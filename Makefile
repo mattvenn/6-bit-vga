@@ -2,7 +2,7 @@ PROJ = 6bitvga
 PIN_DEF = icestick.pcf
 DEVICE = hx1k
 
-SRC = top.v VgaSyncGen.v numbers.v image.v fontROM.v
+SRC = top.v VgaSyncGen.v numbers.v image.v fontROM.v bcd.v
 
 all: $(PROJ).bin
 
@@ -26,7 +26,7 @@ sudo-prog: $(PROJ).bin
 	sudo iceprog $<
 
 debug-vga:
-	iverilog -o test vga_tb.v VgaSyncGen.v
+	iverilog -o test vga_tb.v VgaSyncGen.v bcd.v
 	vvp test -fst
 	gtkwave test.vcd gtk.gtkw
 

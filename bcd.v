@@ -43,12 +43,15 @@ module bcd (
                 number_r <= number;
 
                 if(load) begin
-                    state <= WORK;
                     dig_5_r <= 0;
                     dig_4_r <= 0;
                     dig_3_r <= 0;
                     dig_2_r <= 0;
                     dig_1_r <= 0;
+
+                    // only do the conversion if number is more than 0
+                    if(number > 0)
+                        state <= WORK;
                 end
             end
             WORK: begin

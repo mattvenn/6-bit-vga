@@ -1,4 +1,8 @@
-set_io --warn-no-port LED 95 # centre green
+set_io --warn-no-port leds[4] 95
+set_io --warn-no-port leds[3] 96
+set_io --warn-no-port leds[2] 97
+set_io --warn-no-port leds[1] 98
+set_io --warn-no-port leds[0] 99
 set_io --warn-no-port clk 21
 
 set_io --warn-no-port hsync 80
