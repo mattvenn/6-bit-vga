@@ -35,6 +35,10 @@ debug-numbers:
 	vvp numbers -fst
 	gtkwave test.vcd gtk-numbers.gtkw
 
+debug-bcd:
+	iverilog -o bcd bcd.v bcd_tb.v
+	vvp bcd -fst
+	gtkwave test.vcd gtk-bcd.gtkw
 
 clean:
 	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
